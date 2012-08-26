@@ -1,0 +1,28 @@
+body {
+	margin-top: 50px;
+}
+
+div.gazo {
+	margin-bottom: 80px;
+}
+span.gazo_name {
+	font-weight: bold;
+	color: green;
+}
+div.gazo > a > img {
+	border: 1px solid #ccc;
+}
+
+footer {
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 2px; }
+	footer a {
+		text-decoration: none;
+		color: black;
+		font-weight: bold;
+	}
+
+/* smart phones */
+@media screen and (max-device-width: 480px) {
+}

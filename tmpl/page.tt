@@ -1,0 +1,29 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<h1>[% rel_dir %]</h1>
+
+<script>
+$(document).ready(function(){
+	$("img.lazy").lazyload();
+});
+function originalImage(url) {
+	var options = "scrollbars=0,left=200,top=0"
+	            + ",width=1470"
+	            + ",height=" + screen.height;
+	window.open(url, "", options);
+}
+</script>
+
+[%- FOREACH i IN images %]
+<div class="gazo">
+	<div>
+		<span class="number">[% loop.count %]</span>：
+		<span class="gazo_name">[% i.path %]</span> <span class="size">[[% i.size %]]：</span>
+		<span class="ctime">[% i.ctime %]</span>
+		<span class="ino">ID:[% i.ino %]</span>
+	</div>
+	<a href="javascript:originalImage('[% c().config.URL_BASE %][% i.src %]');"><img class="lazy" src="/static/img/grey.gif" data-original="[% c().config.URL_BASE %][% i.src %]" /></a>
+</div>
+[%- END -%]
+
+[% END %]
