@@ -9,6 +9,14 @@ use Plack::Builder;
 use Gazosure::Web;
 use Gazosure;
 
+my $gazosure_dir = File::Spec->catdir(dirname(__FILE__), 'static', 'img', 'gazosure');
+unless (-l $gazosure_dir) {
+	system('ln', '-s',
+		Gazosure->config->{'BASE_DIRECTORY'},
+		File::Spec->catdir(dirname(__FILE__), 'static', 'img', 'gazosure'),
+	) and die $!;
+}
+
 builder {
     enable 'Plack::Middleware::Static',
         path => qr{^(?:/static/)},
