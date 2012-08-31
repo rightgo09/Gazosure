@@ -7,6 +7,13 @@ use File::Spec;
 use base 'Exporter';
 our @EXPORT = qw(get_dirs get_images);
 
+my $iconv;
+if ($^O eq 'darwin') {
+	require Encode;
+	require Text::Iconv;
+	$iconv = Text::Iconv->new('UTF-8-MAC' => 'UTF-8');
+}
+
 use Gazosure;
 my $BASE_DIRECTORY = Gazosure->config->{'BASE_DIRECTORY'};
 
@@ -36,6 +43,9 @@ sub get_images {
 	opendir my $dh, $dir or die $!;
 	for my $name (readdir($dh)) {
 		if ($name =~ /\.(gif|jpe?g|png|bmp)$/i) {
+			if ($^O eq 'darwin') {
+				$name = Encode::decode_utf8($iconv->convert($name));
+			}
 			my $path = File::Spec->catfile($dir, $name);
 			my ($ino, $size, $ctime) = (stat($path))[1,7,10];
 			push @images, {
