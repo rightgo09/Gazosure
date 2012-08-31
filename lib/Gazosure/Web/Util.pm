@@ -67,10 +67,10 @@ sub size {
 	my $size = shift;
 	return do {
 		if (1024*$MB <= $size) { # GB?
-			int($size/1024*$MB)."GB";
+			sprintf('%.2f', ($size/1024*$MB))."GB";
 		}
 		elsif ($MB <= $size) {
-			int($size/$MB)."MB";
+			sprintf('%.2f', ($size/$MB))."MB";
 		}
 		elsif ($KB <= $size) {
 			int($size/$KB)."KB";
