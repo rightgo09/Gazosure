@@ -1,4 +1,4 @@
-[% WRAPPER 'include/layout.tt' %]
+[% WRAPPER 'include/layout.tt' WITH rel_dir = rel_dir %]
 
 <h1>[% rel_dir %]</h1>
 

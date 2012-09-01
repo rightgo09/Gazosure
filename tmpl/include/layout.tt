@@ -19,7 +19,16 @@
 <body[% IF bodyID %] id="[% bodyID %]"[% END %]>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container"><a class="brand" href="/">Gazosure</a></div>
+			<div class="container">
+				<a class="brand" href="/">Gazosure</a>
+				[% IF rel_dir %]
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">[% rel_dir %]</a></li>
+					</ul>
+				</div>
+				[% END %]
+			</div>
 		</div>
 	</div>
 	<div class="container">
