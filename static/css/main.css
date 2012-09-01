@@ -9,9 +9,6 @@ span.gazo_name {
 	font-weight: bold;
 	color: green;
 }
-div.gazo > a > img {
-	border: 1px solid #ccc;
-}
 
 footer {
 	text-align: right;
