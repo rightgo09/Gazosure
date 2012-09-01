@@ -13,6 +13,7 @@ sub dispatch {
 
 # setup view class
 use Text::Xslate;
+use URI::Escape qw/ uri_escape_utf8 /;
 {
 	my $view_conf = __PACKAGE__->config->{'Text::Xslate'} || +{};
 	unless (exists $view_conf->{path}) {
@@ -36,6 +37,10 @@ use Text::Xslate;
 					}
 					return $c->uri_for($fname, { 't' => $static_file_cache{$fname} || 0 });
 				}
+			},
+			uri_escape_from_path => sub {
+				my $path = shift;
+				return join('/', map uri_escape_utf8($_), split(m|/|, $path));
 			},
 		},
 		%$view_conf

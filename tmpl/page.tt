@@ -22,7 +22,7 @@ function originalImage(url) {
 		<span class="ctime">[% i.ctime %]</span>
 		<span class="ino">ID:[% i.ino %]</span>
 	</div>
-	<a href="javascript:originalImage('[% uri_for('/static/img/gazosure'~uri_escape(i.src)) %]');"><img class="lazy" src="[% uri_for('/static/img/grey.gif') %]" data-original="[% uri_for('/static/img/gazosure'~uri_escape(i.src)) %]" /></a>
+	<a href="javascript:originalImage('[% uri_for('/static/img/gazosure'~uri_escape_from_path(i.src)) %]');"><img class="lazy" src="[% uri_for('/static/img/grey.gif') %]" data-original="[% uri_for('/static/img/gazosure'~uri_escape_from_path(i.src)) %]" /></a>
 </div>
 [%- END -%]
 
