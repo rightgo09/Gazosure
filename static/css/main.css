@@ -30,10 +30,12 @@ footer {
 	.navbar-fixed-top .container,
 	.navbar-fixed-bottom .container {
 		width: 1200px;
+		padding-left: 30px;
 	}
 
 	.span12 {
 		width: 1200px;
+		padding-left: 30px;
 	}
 }
 
