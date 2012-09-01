@@ -23,6 +23,20 @@ footer {
 		font-weight: bold;
 	}
 
+/* wide display */
+@media screen and (min-device-width: 1601px) {
+	.container,
+	.navbar-static-top .container,
+	.navbar-fixed-top .container,
+	.navbar-fixed-bottom .container {
+		width: 1200px;
+	}
+
+	.span12 {
+		width: 1200px;
+	}
+}
+
 /* smart phones */
 @media screen and (max-device-width: 480px) {
 }
