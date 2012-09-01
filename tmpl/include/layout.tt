@@ -11,6 +11,7 @@
 	<script src="[% uri_for('/static/js/jquery.lazyload.min.js') %]"></script>
 	<link href="[% uri_for('/static/bootstrap/bootstrap.min.css') %]" rel="stylesheet" type="text/css" />
 	<link href="[% static_file('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
+	<link href="[% uri_for('/static/bootstrap/bootstrap-responsive.min.css') %]" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
