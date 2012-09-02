@@ -24,6 +24,8 @@
 				[% IF rel_dir %]
 				<div class="nav-collapse collapse">
 					<ul class="nav">
+						<li><a href="#">[% count %]枚</a></li>
+						<li class="divider-vertical"></li>
 						<li class="active"><a href="#">[% rel_dir %]</a></li>
 					</ul>
 				</div>
