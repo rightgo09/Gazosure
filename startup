@@ -1,0 +1,2 @@
+#!/bin/sh
+PLACK_ENV=deployment plackup --port=9091 app.psgi
