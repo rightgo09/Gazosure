@@ -37,13 +37,13 @@ sub slurp {
     do { local $/; <$fh> };
 }
 
-# initialize database
-use Gazosure;
-{
-    unlink 'db/test.db' if -f 'db/test.db';
-
-    my $c = Gazosure->new();
-    $c->setup_schema();
-}
+## initialize database
+#use Gazosure;
+#{
+#    unlink 'db/test.db' if -f 'db/test.db';
+#
+#    my $c = Gazosure->new();
+#    $c->setup_schema();
+#}
 
 1;

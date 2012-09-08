@@ -1,4 +1,5 @@
 use File::Spec;
+use File::Temp qw/ tempdir /;
 +{
-	'BASE_DIRECTORY' => File::Spec->catdir($ENV{'HOME'}, 'Pictures'),
+	'BASE_DIRECTORY' => tempdir(CLEANUP => 1),
 };
