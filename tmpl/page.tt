@@ -7,10 +7,7 @@ $(document).ready(function(){
 	$("img.lazy").lazyload();
 });
 function originalImage(url) {
-	var options = "scrollbars=0,left=200,top=0"
-	            + ",width=1470"
-	            + ",height=" + screen.height;
-	window.open(url, "", options);
+	window.open(url);
 }
 </script>
 
