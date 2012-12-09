@@ -1,2 +1,2 @@
 #!/bin/sh
-PLACK_ENV=deployment plackup --port=9091 app.psgi
+PLACK_ENV=deployment carton exec -- plackup --port=9091 app.psgi &
