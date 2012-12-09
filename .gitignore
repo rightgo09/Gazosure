@@ -13,3 +13,5 @@ META.yml
 MYMETA.json
 MYMETA.yml
 static/img/gazosure
+.carton/
+local/
