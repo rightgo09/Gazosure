@@ -4,22 +4,22 @@
 
 <script>
 $(document).ready(function(){
-	$("img.lazy").lazyload();
+  $("img.lazy").lazyload();
 });
 function originalImage(url) {
-	window.open(url);
+  window.open(url);
 }
 </script>
 
 [%- FOREACH i IN images %]
 <div class="gazo">
-	<div>
-		<span class="number">[% loop.count %]</span>：
-		<span class="gazo_name">[% i.path %]</span> <span class="size">[[% i.size %]]：</span>
-		<span class="ctime">[% i.ctime %]</span>
-		<span class="ino">ID:[% i.ino %]</span>
-	</div>
-	<a href="javascript:originalImage('[% uri_for('/static/img/gazosure'~uri_escape_from_path(i.src)) %]');"><img class="lazy img-polaroid" src="[% uri_for('/static/img/grey.gif') %]" data-original="[% uri_for('/static/img/gazosure'~uri_escape_from_path(i.src)) %]" /></a>
+  <div>
+    <span class="number">[% loop.count %]</span>：
+    <span class="gazo_name">[% i.path %]</span> <span class="size">[[% i.size %]]：</span>
+    <span class="ctime">[% i.ctime %]</span>
+    <span class="ino">ID:[% i.ino %]</span>
+  </div>
+  <a href="javascript:originalImage('[% uri_for('/static/img/gazosure'~uri_escape_from_path(i.src)) %]');"><img class="lazy img-polaroid" src="[% uri_for('/static/img/grey.gif') %]" data-original="[% uri_for('/static/img/gazosure'~uri_escape_from_path(i.src)) %]" /></a>
 </div>
 [%- END -%]
 

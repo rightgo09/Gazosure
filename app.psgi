@@ -16,12 +16,12 @@ if (-e $gazosure_dir || readlink $gazosure_dir) {
 symlink(Gazosure->config->{'BASE_DIRECTORY'}, $gazosure_dir) or die $!;
 
 builder {
-    enable 'Plack::Middleware::Static',
-        path => qr{^(?:/static/)},
-        root => File::Spec->catdir(dirname(__FILE__));
-    enable 'Plack::Middleware::Static',
-        path => qr{^(?:/robots\.txt|/favicon\.ico)$},
-        root => File::Spec->catdir(dirname(__FILE__), 'static');
-    enable 'Plack::Middleware::ReverseProxy';
-    Gazosure::Web->to_app();
+  enable 'Plack::Middleware::Static',
+    path => qr{^(?:/static/)},
+    root => File::Spec->catdir(dirname(__FILE__));
+  enable 'Plack::Middleware::Static',
+    path => qr{^(?:/robots\.txt|/favicon\.ico)$},
+    root => File::Spec->catdir(dirname(__FILE__), 'static');
+  enable 'Plack::Middleware::ReverseProxy';
+  Gazosure::Web->to_app();
 };

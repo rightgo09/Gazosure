@@ -1,45 +1,45 @@
 <!doctype html>
 <html lang="ja">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>[% title || 'Gazosure' %]</title>
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-	<meta name="format-detection" content="telephone=no" />
-	<script src="[% uri_for('/static/js/jquery-1.8.0.min.js') %]"></script>
-	<script src="[% uri_for('/static/js/jquery.lazyload.min.js') %]"></script>
-	<link href="[% uri_for('/static/bootstrap/bootstrap.min.css') %]" rel="stylesheet" type="text/css" />
-	<link href="[% static_file('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
-	<link href="[% uri_for('/static/bootstrap/bootstrap-responsive.min.css') %]" rel="stylesheet" type="text/css" />
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>[% title || 'Gazosure' %]</title>
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <script src="[% uri_for('/static/js/jquery-1.8.0.min.js') %]"></script>
+  <script src="[% uri_for('/static/js/jquery.lazyload.min.js') %]"></script>
+  <link href="[% uri_for('/static/bootstrap/bootstrap.min.css') %]" rel="stylesheet" type="text/css" />
+  <link href="[% static_file('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
+  <link href="[% uri_for('/static/bootstrap/bootstrap-responsive.min.css') %]" rel="stylesheet" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body[% IF bodyID %] id="[% bodyID %]"[% END %]>
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="brand" href="/">Gazosure</a>
-				[% IF rel_dir %]
-				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li><a href="#">[% count %]枚</a></li>
-						<li class="divider-vertical"></li>
-						<li class="active"><a href="#">[% rel_dir %]</a></li>
-					</ul>
-				</div>
-				[% END %]
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div id="main">
-			[% content %]
-		</div>
-		<footer class="footer">
-			Powered by <a href="http://amon.64p.org/">Amon2</a>
-		</footer>
-	</div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">Gazosure</a>
+        [% IF rel_dir %]
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li><a href="#">[% count %]枚</a></li>
+            <li class="divider-vertical"></li>
+            <li class="active"><a href="#">[% rel_dir %]</a></li>
+          </ul>
+        </div>
+        [% END %]
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="main">
+      [% content %]
+    </div>
+    <footer class="footer">
+      Powered by <a href="http://amon.64p.org/">Amon2</a>
+    </footer>
+  </div>
 </body>
 </html>

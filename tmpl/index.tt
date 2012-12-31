@@ -1,14 +1,14 @@
 [% WRAPPER 'include/layout.tt' %]
 [%- MACRO display_directory(outsides) BLOCK -%]
-	[%- FOREACH dir IN outsides -%]
-		[%- IF is_array_ref(dir) -%]
-			<li><ul>
-			[% display_directory(dir) %]
-			</ul></li>
-		[%- ELSE -%]
-			<li><a href="page?rel_dir=[% uri_escape(dir.path) %]">[% dir.name %]</a></li>
-		[% END -%]
-	[%- END -%]
+  [%- FOREACH dir IN outsides -%]
+    [%- IF is_array_ref(dir) -%]
+      <li><ul>
+      [% display_directory(dir) %]
+      </ul></li>
+    [%- ELSE -%]
+      <li><a href="page?rel_dir=[% uri_escape(dir.path) %]">[% dir.name %]</a></li>
+    [% END -%]
+  [%- END -%]
 [%- END -%]
 <ul>[% display_directory(dirs) %]</ul>
 [% END %]
