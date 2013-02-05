@@ -14,7 +14,7 @@ test_psgi
 		for my $fname (qw(
 				static/bootstrap/bootstrap-responsive.min.css
 				static/bootstrap/bootstrap.min.css
-				static/js/jquery-1.8.0.min.js
+				static/js/jquery-1.8.3.min.js
 				static/js/jquery.lazyload.min.js
 				robots.txt)) {
 			my $req = HTTP::Request->new(GET => "http://localhost/$fname");
